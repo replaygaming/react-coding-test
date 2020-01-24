@@ -1,4 +1,4 @@
-import { FIXTURES_API_TIMEOUT_IN_MS } from '../constants/APIConstants';
+import { FIXTURES_API_TIMEOUT_IN_MS } from '../../constants/APIConstants';
 
 export const fetchData = async url => {
   // TODO: Check internet connectivity

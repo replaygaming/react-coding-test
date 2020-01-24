@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import PokerGameFixture from './services/PokerGameService/index.fixture';
 import App from './App';
 
-import table from './data/table-1'
+const pokerGameFixture = new PokerGameFixture();
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App table={table} />, div);
+  ReactDOM.render(<App pokerGameService={pokerGameFixture} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

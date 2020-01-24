@@ -11,7 +11,7 @@ const props = {
   username: 'Frank',
   chips: 12345,
   cards: ['Ac', 'As'],
-  bet: 100,
+  bet: 100
 };
 
 describe('Seats', () => {
@@ -20,13 +20,13 @@ describe('Seats', () => {
   describe('occupied', () => {
     it('shows the username and stack', () => {
       component = shallow(<Seat {...props} />);
-      expect(component.find('.username').text()).toEqual('Frank')
-      expect(component.find('.chips').text()).toEqual('12345')
+      expect(component.find('.username').text()).toEqual('Frank');
+      expect(component.find('.chips').text()).toEqual('12,345');
     });
 
     xit('shows All-In when the player has bet all of their chips', () => {
       component = shallow(<Seat {...props} chips={0} />);
-      expect(component.find('.chips').text()).toEqual('All-In')
+      expect(component.find('.chips').text()).toEqual('All-In');
     });
 
     it('shows the bet', () => {
@@ -37,7 +37,7 @@ describe('Seats', () => {
     it('shows the hole cards', () => {
       component = shallow(<Seat {...props} />);
       expect(component.find(Cards).props()).toEqual({ values: ['Ac', 'As'] });
-    })
+    });
   });
 
   describe('unoccuped', () => {
