@@ -2,11 +2,11 @@
   position: absolute;
   top: -5px;
   left: 75px;
-  width: 150px;
-  margin-left: -72px;
+  width: 350px;
+  margin-left: -152px;
 }
 
-.Table > * > .Cards {
+.Table>*>.Cards {
   position: absolute;
   left: -185px;
   top: -5px;

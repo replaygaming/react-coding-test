@@ -33,7 +33,7 @@ class App extends Component {
       loading: true
     });
     const request = {
-      tableId: 3
+      tableId: 2
     };
     const tableDataPromise = pokerGameService.getTableData(request);
     tableDataPromise.then(table => {
