@@ -1,0 +1,1 @@
+export const FIXTURES_API_TIMEOUT_IN_MS = 2000;
