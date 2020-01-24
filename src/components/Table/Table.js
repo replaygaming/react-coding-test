@@ -1,4 +1,6 @@
 import React from 'react';
+import cx from 'classnames';
+
 import { tableShape } from '../../types';
 
 import Seats from '../Seats';
@@ -8,7 +10,7 @@ import Pots from '../Pots';
 import './Table.css';
 
 const Table = ({ table }) => (
-  <div className="Table">
+  <div className={cx('Table', table.game)}>
     <div>
       <Seats seats={table.seats} players={table.currentHand.players} />
       <Cards values={table.currentHand.communityCards} />
