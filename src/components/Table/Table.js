@@ -7,26 +7,15 @@ import Pots from '../Pots';
 
 import './Table.css';
 
-const Table = ({ table }) => {
-  let currentHand = table.currentHand;
-  const defaultCurrentHand = {
-    players: [],
-    communityCards: [],
-    pots: []
-  };
-  if (currentHand === undefined) {
-    currentHand = defaultCurrentHand;
-  }
-  return (
-    <div className="Table">
-      <div>
-        <Seats seats={table.seats} players={currentHand.players} />
-        <Cards values={currentHand.communityCards} />
-        <Pots pots={currentHand.pots} />
-      </div>
+const Table = ({ table }) => (
+  <div className="Table">
+    <div>
+      <Seats seats={table.seats} players={table.currentHand.players} />
+      <Cards values={table.currentHand.communityCards} />
+      <Pots pots={table.currentHand.pots} />
     </div>
-  );
-};
+  </div>
+);
 
 Table.propTypes = {
   table: tableShape.isRequired
