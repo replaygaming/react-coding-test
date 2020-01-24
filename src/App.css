@@ -1,3 +1,11 @@
 body {
   background-color: #003366;
 }
+
+.loader {
+  color: white;
+  position: absolute;
+  z-index: 10;
+  left: 40%;
+  top: 40%;
+}
