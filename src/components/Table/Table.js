@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { tableShape } from '../../types';
 
 import Seats from '../Seats';
@@ -7,9 +8,9 @@ import Pots from '../Pots';
 
 import './Table.css';
 
-const Table = ({ table: { seats, currentHand: { players, communityCards, pots } = {} } }) => {
+const Table = ({ table: { game, seats, currentHand: { players, communityCards, pots } = {} } }) => {
   return (
-    <div className="Table">
+    <div className={cx('Table', game)}>
       <div>
         <Seats seats={seats} players={players} />
         {communityCards && <Cards values={communityCards} />}
