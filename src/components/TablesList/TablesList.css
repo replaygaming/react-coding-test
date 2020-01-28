@@ -1,0 +1,20 @@
+.TablesList {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  max-width: 1024px;
+  margin: 40px auto;
+}
+
+.TablesList > li {
+  margin-right: 40px;
+}
+
+.TablesList a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.TablesList a:hover {
+  text-decoration: underline;
+}

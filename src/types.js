@@ -40,3 +40,12 @@ export const tableShape = PropTypes.shape({
   seats: PropTypes.arrayOf(seatShape).isRequired,
   currentHand: handShape
 });
+
+const tablesListItemShape = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+});
+
+export const tablesListShape = {
+  tablesList: PropTypes.arrayOf(tablesListItemShape).isRequired,
+};
