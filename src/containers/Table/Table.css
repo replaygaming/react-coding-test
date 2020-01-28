@@ -1,0 +1,12 @@
+.TableMessage {
+  text-align: center;
+}
+
+.TableMessage.Loading {
+  color: #ffffff;
+}
+
+.TableMessage.Error {
+  color: #ef705f;
+}
+
