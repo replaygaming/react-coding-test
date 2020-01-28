@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './App';
+import initAxios from './config/axios';
+import createStore from './store';
+import rootSaga from './sagas';
+import routes from './routes';
 import * as serviceWorker from './serviceWorker';
 
-// TODO: Retrieve this data from the API rather than a fixture
-import table from './data/table-1'
+initAxios({ baseUrl: 'https://storage.googleapis.com/replaypoker-dummy-api' });
 
-ReactDOM.render(<App table={table} />, document.getElementById('root'));
+const store = createStore({});
+store.runSaga(rootSaga);
+
+ReactDOM.render(
+	<Provider store={store}>
+		<BrowserRouter>
+			<App routes={routes} />
+		</BrowserRouter>
+	</Provider>,
+	document.getElementById('root'),
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
