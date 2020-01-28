@@ -20,8 +20,20 @@ describe('Table', () => {
     expect(component.find(Pots).length).toEqual(1);
   });
 
+  it('does not render Pots if pots data values is falsy', () => {
+    data.currentHand.pots = null;
+    component = shallow(<Table table={data} />);
+    expect(component.find(Pots).length).toEqual(0);
+  });
+
   it('renders Cards', () => {
     component = shallow(<Table table={data} />);
     expect(component.find(Cards).length).toEqual(1);
+  });
+
+  it('does not render Cards if communityCards data values is falsy', () => {
+    data.currentHand.communityCards = null;
+    component = shallow(<Table table={data} />);
+    expect(component.find(Cards).length).toEqual(0);
   });
 });

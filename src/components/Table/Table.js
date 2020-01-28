@@ -7,15 +7,17 @@ import Pots from '../Pots';
 
 import './Table.css';
 
-const Table = ({ table }) => (
-  <div className="Table">
-    <div>
-      <Seats seats={table.seats} players={table.currentHand.players} />
-      <Cards values={table.currentHand.communityCards} />
-      <Pots pots={table.currentHand.pots} />
+const Table = ({ table: { seats, currentHand: { players, communityCards, pots } = {} } }) => {
+  return (
+    <div className="Table">
+      <div>
+        <Seats seats={seats} players={players} />
+        {communityCards && <Cards values={communityCards} />}
+        {pots && <Pots pots={pots} />}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 Table.propTypes = {
   table: tableShape.isRequired,
