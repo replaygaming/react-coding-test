@@ -1,4 +1,5 @@
 import React from 'react';
+import numeral from 'numeral';
 
 import './Chips.css';
 
@@ -8,7 +9,7 @@ const Chips = ({ amount }) => {
 
   return (
     <div className="Chips">
-      {amount}
+      {numeral(amount).format('0,0')}
     </div>
   );
 }

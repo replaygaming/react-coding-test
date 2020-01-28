@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import numeral from 'numeral';
 
 import { seatProps } from '../../types';
 import Cards from '../Cards';
@@ -12,7 +13,9 @@ const Seat = ({ id, state, username, chips, cards, bet }) => (
       username ? (
         <div className="nameplate">
           <div className="username">{username}</div>
-          <div className="chips">{(bet > 0 && chips < 0) ? 'All-In' : chips}</div>
+          <div className="chips">
+            {(bet > 0 && chips < 0) ? 'All-In' : numeral(chips).format('0,0')}
+          </div>
         </div>
       ) : (
         <div className="nameplate available">
