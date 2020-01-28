@@ -41,6 +41,16 @@ export const tableShape = PropTypes.shape({
   currentHand: handShape
 });
 
+const routeShape = PropTypes.shape({
+  path: PropTypes.string.isRequired,
+  exact: PropTypes.bool,
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.object, PropTypes.func]).isRequired,
+});
+
+export const routesShape = {
+  routes: PropTypes.arrayOf(routeShape).isRequired,
+};
+
 const tablesListItemShape = PropTypes.shape({
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,

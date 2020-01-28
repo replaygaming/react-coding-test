@@ -1,24 +1,27 @@
-import React, { Component } from 'react';
-import { tableShape } from './types';
+import React from 'react';
+import { Switch, Route } from 'react-router';
 
-import Table from './components/Table';
+import { routesShape } from './types';
 
 import './App.css';
 
-class App extends Component {
-  static propTypes = {
-    table: tableShape.isRequired,
-  }
+const App = ({ routes }) => (
+  <div className="App">
+    <Switch>
+      {routes.map((route) => (
+        <Route
+          key={`path-${route.path}`}
+          exact={route.exact}
+          path={route.path}
+          component={route.component}
+        />
+      ))}
+    </Switch>
+  </div>
+);
 
-  render() {
-    const { table } = this.props;
-
-    return (
-      <div className="App">
-        <Table table={table} />
-      </div>
-    );
-  }
-}
+App.propTypes = {
+  ...routesShape,
+};
 
 export default App;
